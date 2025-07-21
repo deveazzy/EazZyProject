@@ -1,10 +1,13 @@
-/* @reference url("_global.css"); */
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 @import "/opt/eazzy-docker/www/mirror/src/css/_header.css";
 @import "/opt/eazzy-docker/www/mirror/src/css/_global.css";
 @import "/opt/eazzy-docker/www/mirror/src/css/_sidebar-left.css";
 @import "/opt/eazzy-docker/www/mirror/src/css/_icons.css";
 @import "/opt/eazzy-docker/www/mirror/src/css/_home.css";
-
 @import "/opt/eazzy-docker/www/mirror/src/css/_typography.css";
 @import "/opt/eazzy-docker/www/mirror/src/css/_tabs.css";
 @import "/opt/eazzy-docker/www/mirror/src/css/_buttons.css";
@@ -16,4 +19,3 @@
 @import "/opt/eazzy-docker/www/mirror/src/css/vendor/flatpickr/flatpickr.css";
 @import "/opt/eazzy-docker/www/mirror/src/css/vendor/pnotify/PNotifyBrightTheme.css";
 @import "tailwindcss";
-/* @source "../../src/css"; */

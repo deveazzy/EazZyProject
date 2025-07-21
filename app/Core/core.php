@@ -1,51 +1,49 @@
 <?php
-/**
- * app/Core/core.php
- *
- * @author    [EazZy Project]
- * @copyright Copyright (c) [2025] [EazZy Project]
- * @license   https://opensource.org/licenses/MIT MIT License
- * File ini berisi semua tautan ke aset eksternal (CSS, JavaScript)
- * dan font yang digunakan di EazZy Project.
- */
 
-// Path dari app/Core/ ke root adalah naik dua tingkat (../../)
 require_once __DIR__ . '/../../vendor/autoload.php';
-// Path ke file .env juga berada di root
+
 use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
-$dotenv->load(); 
+$dotenv->load();
 
-// Dapatkan path URL yang diminta oleh pengguna
 $requestUri = $_SERVER['REQUEST_URI'];
-// Hapus query string jika ada, hanya ambil path-nya
 $path = strtok($requestUri, '?');
-// Hapus slash di awal dan akhir untuk memudahkan parsing
 $path = trim($path, '/');
-// Pisahkan path menjadi segmen-segmen
 $segments = explode('/', $path);
-// Tentukan 'page' dari segmen pertama
+
 $page = (!empty($segments[0])) ? htmlspecialchars($segments[0]) : 'home';
-// Tentukan 'layout' dari segmen kedua (jika ada)
-$layout = 'default'; // Default value
+$layout = 'default';
 if (isset($segments[1])) {
     $layout = htmlspecialchars($segments[1]);
 }
+
 if ($page === 'redis-test' && isset($_GET['clear_cache'])) {
     try {
         if (class_exists('Redis')) {
             $redis = new Redis();
             $redis->connect('redis-cache', 6379);
-            $redis->del('products:all'); // Kunci cache yang spesifik
+            $redis->del('products:all');
         }
     } catch (Exception $e) {
-        // Abaikan error jika Redis tidak bisa dihubungi saat proses clear cache.
+        // Error handling for Redis connection
     }
-    
-    // Redirect untuk membersihkan parameter GET dari URL.
     header('Location: /redis-test');
-    exit; // Wajib ada setelah header redirect.
+    exit;
 }
-$page_css_file = "/css/{$page}.css"; // Jalur absolut
-$page_js_file = "/js/{$page}.js"; // Jalur absolut
-?>
+
+$page_css_file = "/css/{$page}.css";
+$page_js_file = "/js/{$page}.js";
+
+$pages_without_sidebar = [
+    '401', '403', '500', '503', '404', 'home', 'about'
+];
+
+$allowed_pages = [
+    '401', '403', '500', '503', '404',
+    'home', 'about', 'atoms', 'icons',
+    'typography', 'tabs', 'widgets', 'buttons',
+    'alerts-and-notifications', 'tailwind-css',
+    'flatpickr', 'apexcharts', 'animate-style',
+    'tabulator', 'splide', 'redis-test', 'modal-form',
+    'blank-content', 'nprogress', 'grid'
+];

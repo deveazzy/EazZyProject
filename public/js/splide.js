@@ -1,16 +1,22 @@
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
+
 document.addEventListener('DOMContentLoaded', function () {
 var splide = new Splide('#contoh-slider', {
-type       : 'loop', // 'slide', 'loop', atau 'fade'
-perPage    : 3,      // Tampilkan 3 slide sekaligus
-perMove    : 1,      // Pindah 1 slide saat navigasi
-gap        : '1rem', // Jarak antar slide
-pagination : true,   // Tampilkan pagination dots
-arrows     : true,   // Tampilkan panah navigasi
+type       : 'loop',
+perPage    : 3,
+perMove    : 1,
+gap        : '1rem',
+pagination : true,
+arrows     : true,
 breakpoints: {
-    768: { // Untuk layar tablet
+    768: {
     perPage: 2,
     },
-    640: { // Untuk layar mobile
+    640: {
     perPage: 1,
     },
 },

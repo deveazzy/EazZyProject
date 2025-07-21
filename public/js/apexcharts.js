@@ -1,15 +1,11 @@
-// /**
-//  * css/apexchart.js
-//  *
-//  * @author    [EazZy Project]
-//  * @copyright Copyright (c) [2025] [EazZy Project]
-//  * @license   https://opensource.org/licenses/MIT MIT License
-//  * File ini berisi semua tautan ke aset eksternal (CSS, JavaScript)
-//  * dan font yang digunakan di EazZy Project.
-//  */
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+*/
 
 // Mengimpor tema dari file apexcharts-theme.js
-import { chartTheme } from './apexcharts-theme.js'; // PERBAIKAN PATH IMPOR
+import { chartTheme } from "./apexcharts-theme.js";
 
 // Fungsi-fungsi helper untuk menghasilkan data grafik
 function generateDayWiseTimeSeries(baseval, count, yrange) {
@@ -19,7 +15,7 @@ function generateDayWiseTimeSeries(baseval, count, yrange) {
         let x = baseval;
         let y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
         series.push([x, y]);
-        baseval += 86400000; // Tambah 1 hari
+        baseval += 86400000;
         i++;
     }
     return series;
@@ -51,7 +47,7 @@ function generateCandlestickData(count) {
             x: new Date(baseval),
             y: [open, high, low, close].map(val => parseFloat(val.toFixed(2)))
         });
-        baseval += 86400000; // Tambah 1 hari
+        baseval += 86400000;
         i++;
     }
     return data;
@@ -77,9 +73,9 @@ function generateBubbleData(count, min, max) {
     let data = [];
     for (let i = 0; i < count; i++) {
         data.push([
-            Math.floor(Math.random() * 70) + 1, // X
-            Math.floor(Math.random() * (max - min + 1)) + min, // Y
-            Math.floor(Math.random() * 50) + 10 // Z (size)
+            Math.floor(Math.random() * 70) + 1,
+            Math.floor(Math.random() * (max - min + 1)) + min,
+            Math.floor(Math.random() * 50) + 10
         ]);
     }
     return data;
@@ -90,7 +86,7 @@ function generateRangeBarData(count) {
     let baseval = new Date('01/01/2024').getTime();
     for (let i = 0; i < count; i++) {
         let start = baseval + Math.floor(Math.random() * 10) * 86400000;
-        let end = start + Math.floor(Math.random() * 5) * 86400000 + 3600000; // Tambah 1 jam
+        let end = start + Math.floor(Math.random() * 5) * 86400000 + 3600000;
         data.push({
             x: `Tugas ${i + 1}`,
             y: [start, end]
@@ -99,23 +95,21 @@ function generateRangeBarData(count) {
     return data;
 }
 
-// Fungsi tambahan untuk Range Area Chart
 function generateRangeAreaData(count, yrange) {
     let data = [];
     let baseval = new Date('01/01/2024').getTime();
     for (let i = 0; i < count; i++) {
         let low = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
-        let high = low + Math.floor(Math.random() * 20) + 5; // Rentang 5-25 di atas 'low'
+        let high = low + Math.floor(Math.random() * 20) + 5;
         data.push({
             x: baseval,
             y: [low, high]
         });
-        baseval += 86400000; // Tambah 1 hari
+        baseval += 86400000;
     }
     return data;
 }
 
-// Fungsi tambahan untuk Slope Chart
 function generateSlopeData(categories, startYear, endYear, minVal, maxVal) {
     let series = [];
     categories.forEach(category => {
@@ -146,22 +140,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const options = {
-            ...chartTheme.area, 
+            ...chartTheme.area,
             series: [{
                 name: 'Pendapatan (Juta Rp)',
                 data: [120, 155, 130, 180, 160, 210, 240, 220, 250, 280, 310, 300]
             }],
             chart: {
-                ...chartTheme.area.chart, 
+                ...chartTheme.area.chart,
                 height: 350,
-                type: 'area', 
+                type: 'area',
             },
             dataLabels: {
-                enabled: false 
+                enabled: false
             },
             stroke: {
-                ...chartTheme.area.stroke, 
-                curve: 'smooth', 
+                ...chartTheme.area.stroke,
+                curve: 'smooth',
                 width: 2
             },
             xaxis: {
@@ -175,13 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             },
             yaxis: {
-                ...chartTheme.area.yaxis, 
+                ...chartTheme.area.yaxis,
                 title: {
                     text: 'Pendapatan (Juta Rp)'
                 }
             },
             tooltip: {
-                ...chartTheme.area.tooltip, 
+                ...chartTheme.area.tooltip,
                 x: {
                     format: 'MMMM'
                 },
@@ -192,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             },
             fill: {
-                ...chartTheme.area.fill, 
+                ...chartTheme.area.fill,
                 type: 'gradient',
                 gradient: {
                     shadeIntensity: 1,
@@ -201,12 +195,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     stops: [0, 90, 100]
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -223,11 +217,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!chartContainer) return;
 
         const options = {
-            ...chartTheme.donut, // Terapkan tema donut
+            ...chartTheme.donut,
             series: [44, 55, 13, 33],
             labels: ['Tim A', 'Tim B', 'Tim C', 'Tim D'],
             chart: {
-                ...chartTheme.donut.chart, 
+                ...chartTheme.donut.chart,
                 type: 'donut',
                 height: 250
             },
@@ -237,9 +231,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     legend: {
                         position: 'bottom'
                     },
-                    chart: { 
+                    chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -286,12 +280,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -305,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!chartContainer) return;
 
         const options = {
-            ...chartTheme.bar, 
+            ...chartTheme.bar,
             series: [{
                 name: 'Penjualan',
                 data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
@@ -317,13 +311,13 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             plotOptions: {
                 bar: {
-                    horizontal: false, 
+                    horizontal: false,
                     columnWidth: '55%',
                     borderRadius: 5,
                 },
             },
             dataLabels: {
-                enabled: false 
+                enabled: false
             },
             xaxis: {
                 ...chartTheme.bar.xaxis,
@@ -338,12 +332,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     text: 'Jumlah Penjualan'
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -369,13 +363,13 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             plotOptions: {
                 bar: {
-                    horizontal: true, 
+                    horizontal: true,
                     columnWidth: '70%',
                     borderRadius: 5,
                 },
             },
             dataLabels: {
-                enabled: true, 
+                enabled: true,
                 formatter: function (val) {
                     return val + "%";
                 }
@@ -393,12 +387,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     text: 'Kategori'
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -412,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!chartContainer) return;
 
         const options = {
-            ...chartTheme.line, 
+            ...chartTheme.line,
             series: [{
                 name: 'Penjualan',
                 type: 'column',
@@ -425,12 +419,12 @@ document.addEventListener('DOMContentLoaded', () => {
             chart: {
                 ...chartTheme.line.chart,
                 height: 350,
-                type: 'line', 
+                type: 'line',
                 stacked: false,
             },
             stroke: {
                 ...chartTheme.line.stroke,
-                width: [0, 2] 
+                width: [0, 2]
             },
             plotOptions: {
                 bar: {
@@ -473,12 +467,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -492,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!chartContainer) return;
 
         const options = {
-            ...chartTheme.area, 
+            ...chartTheme.area,
             series: [{
                 name: 'Rentang Harga',
                 data: generateRangeAreaData(30, { min: 100, max: 200 })
@@ -526,12 +520,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -548,7 +542,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ...chartTheme.boxPlot,
             series: [{
                 type: 'boxPlot',
-                data: generateBoxPlotData(7) 
+                data: generateBoxPlotData(7)
             }],
             chart: {
                 ...chartTheme.boxPlot.chart,
@@ -568,12 +562,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     text: 'Nilai'
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -639,12 +633,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -694,12 +688,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     text: 'Variabel Y'
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -745,12 +739,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     text: 'Bagian Hari'
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -800,12 +794,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     color: '#373d3f'
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -821,7 +815,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const categories = ['Produk A', 'Produk B', 'Produk C', 'Produk D', 'Produk E'];
         const startYear = 2023;
         const endYear = 2024;
-        const seriesData = generateSlopeData(categories, startYear, endYear, 1, 10); // Peringkat 1-10
+        const seriesData = generateSlopeData(categories, startYear, endYear, 1, 10);
 
         const options = {
             ...chartTheme.line,
@@ -831,17 +825,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 height: 350,
                 type: 'line',
                 zoom: {
-                    enabled: false 
+                    enabled: false
                 },
             },
             stroke: {
                 ...chartTheme.line.stroke,
-                curve: 'straight', 
+                curve: 'straight',
                 width: 3
             },
             markers: {
                 ...chartTheme.line.markers,
-                size: 6, 
+                size: 6,
                 strokeWidth: 2,
                 hover: {
                     sizeOffset: 4
@@ -868,7 +862,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             yaxis: {
                 ...chartTheme.line.yaxis,
-                reversed: true, 
+                reversed: true,
                 min: 1,
                 max: 10,
                 tickAmount: 9,
@@ -882,12 +876,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 ...chartTheme.line.grid,
                 xaxis: {
                     lines: {
-                        show: true 
+                        show: true
                     }
                 },
                 yaxis: {
                     lines: {
-                        show: true 
+                        show: true
                     }
                 }
             },
@@ -896,7 +890,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 shared: false,
                 intersect: true,
                 x: {
-                    show: false 
+                    show: false
                 },
                 y: {
                     formatter: function (val, { seriesIndex, dataPointIndex, w }) {
@@ -911,12 +905,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 position: 'right',
                 offsetY: 40
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -968,12 +962,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -1020,12 +1014,12 @@ document.addEventListener('DOMContentLoaded', () => {
             markers: {
                 size: 4
             },
-            responsive: [{ 
+            responsive: [{
                 breakpoint: 480,
                 options: {
                     chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }
@@ -1059,9 +1053,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     legend: {
                         position: 'bottom'
                     },
-                    chart: { 
+                    chart: {
                         toolbar: {
-                            show: true 
+                            show: true
                         }
                     }
                 }

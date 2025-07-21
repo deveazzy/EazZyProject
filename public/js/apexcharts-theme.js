@@ -1,12 +1,8 @@
-// /**
-//  * css/apexcharts-theme.js
-//  *
-//  * @author    [EazZy Project]
-//  * @copyright Copyright (c) [2025] [EazZy Project]
-//  * @license   https://opensource.org/licenses/MIT MIT License
-//  * File ini berisi semua tautan ke aset eksternal (CSS, JavaScript)
-//  * dan font yang digunakan di EazZy Project.
-//  */
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+*/
 
 // Ini adalah tempat Anda bisa mengubah warna default.
 export const themePalette = [
@@ -114,7 +110,7 @@ export const chartTheme = {
 
     donut: {
         ...baseTheme,
-        stroke: { ...baseTheme.stroke, colors: ['#FFFFFF'] }, // Garis putih antar slice
+        stroke: { ...baseTheme.stroke, colors: ['#FFFFFF'] },
         plotOptions: { pie: { donut: { labels: { show: true, name: { show: true, offsetY: -10 }, value: { show: true, offsetY: 10, formatter: (val) => val }, total: { show: true, label: 'Total', formatter: (w) => w.globals.seriesTotals.reduce((a, b) => a + b, 0) } } } } },
         dataLabels: { enabled: true, formatter: (val) => val.toFixed(1) + '%' },
         legend: { ...baseTheme.legend, position: 'bottom' }

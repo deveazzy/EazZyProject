@@ -1,16 +1,20 @@
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
+
 /**
  * Fungsi untuk menampilkan modal error.
  * @param {string} title - Judul modal.
  * @param {string} message - Pesan yang akan ditampilkan di dalam modal.
  */
 export function showErrorModal(title, message) {
-  // Hapus modal lama jika ada untuk mencegah duplikasi
   const existingModal = document.getElementById("error-modal");
   if (existingModal) {
     existingModal.remove();
   }
 
-  // Buat elemen-elemen modal dengan class Tailwind CSS
   const modalOverlay = document.createElement("div");
   modalOverlay.id = "error-modal";
   modalOverlay.className =
@@ -22,7 +26,6 @@ export function showErrorModal(title, message) {
   const modalHeader = document.createElement("div");
   modalHeader.className = "flex items-center mb-4";
 
-  // Ikon Error (SVG)
   const errorIcon = document.createElementNS(
     "http://www.w3.org/2000/svg",
     "svg"

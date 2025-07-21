@@ -1,15 +1,16 @@
 /*
- * @author  [EazZy Project]
+ * @author    [EazZy Project]
  * @copyright Copyright (c) [2025] [EazZy Project]
  * @license   https://opensource.org/licenses/MIT MIT License
  */
 
 /**
  * Logika untuk NProgress.js
- * * Skrip ini mengelola progress bar di bagian atas halaman untuk memberikan
+ * Skrip ini mengelola progress bar di bagian atas halaman untuk memberikan
  * umpan balik visual selama pemuatan halaman. Ini menggunakan NProgress.inc()
  * untuk mensimulasikan kemajuan pada koneksi yang lambat.
  */
+import { createIcons, icons } from "/assets/vendor/lucide/lucide.js";
 import { showErrorModal } from "./nprogress-utils.js";
 function loadScript(src) {
   return new Promise((resolve, reject) => {
@@ -23,7 +24,6 @@ function loadScript(src) {
 
 loadScript("/assets/vendor/nprogress/nprogress.min.js")
   .then(() => {
-    // -- JIKA BERHASIL --
     let nprogressInterval;
     NProgress.start();
 
@@ -35,15 +35,14 @@ loadScript("/assets/vendor/nprogress/nprogress.min.js")
     };
   })
   .catch((error) => {
-    // -- JIKA GAGAL --
     console.error(error);
     showErrorModal(
       "Masalah Koneksi",
       "Gagal memuat komponen halaman. Mohon periksa koneksi internet Anda."
     );
   });
-
+  
 document.addEventListener("DOMContentLoaded", () => {
   // Anda bisa menambahkan fungsi global lainnya di sini.
-  // Contoh: console.log('DOM siap untuk fungsi global lainnya.');
+  createIcons({ icons });
 });

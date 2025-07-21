@@ -1,13 +1,8 @@
-// /**
-//  * css/tabulator.js
-//  *
-//  * @author    [EazZy Project]
-//  * @copyright Copyright (c) [2025] [EazZy Project]
-//  * @license   https://opensource.org/licenses/MIT MIT License
-//  * File ini berisi semua tautan ke aset eksternal (CSS, JavaScript)
-//  * dan font yang digunakan di EazZy Project.
-//  */
-// Impor createIcons dan icons dari Lucide Icons
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 import { createIcons, icons } from "/assets/vendor/lucide/lucide.js";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -35,8 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
       status: false,
     },
   ];
-  createIcons({ icons });
-  // Inisialisasi Tabulator
   var table = new Tabulator("#my-data-table", {
     height: "311px",
     data: tabledata,
@@ -71,4 +64,5 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     ],
   });
+  createIcons({ icons });
 });

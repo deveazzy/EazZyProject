@@ -1,7 +1,12 @@
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
+
 import { createIcons, icons } from "/assets/vendor/lucide/lucide.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // --- BAGIAN LOGIKA RENDER IKON (TIDAK DIUBAH) ---
   const categorizedIconList = {
     Umum: [
       "home",
@@ -1428,7 +1433,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderIcons(searchTerm = "") {
-    if (!iconGrid) return; // Guard clause
+    if (!iconGrid) return;
     iconGrid.innerHTML = "";
 
     const lowerSearchTerm = searchTerm.toLowerCase();
@@ -1474,15 +1479,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   renderIcons();
 
-  // --- BAGIAN LOGIKA STICKY SEARCH (KODE BARU DENGAN INTERSECTION OBSERVER) ---
   const stickySection = document.getElementById("sticky-search-section");
   const placeholder = document.getElementById("sticky-placeholder");
   const mainContainer = document.getElementById("main-content-container");
 
   if (stickySection && placeholder && mainContainer) {
-    // Buat elemen sentinel untuk diobservasi
     const sentinel = document.createElement("div");
-    // Posisikan sentinel tepat di atas search bar
     stickySection.before(sentinel);
 
     const observerCallback = (entries) => {
@@ -1500,12 +1502,11 @@ document.addEventListener("DOMContentLoaded", () => {
         stickySection.classList.add("is-sticky");
       } else {
         stickySection.classList.remove("is-sticky");
-        stickySection.style.width = ""; // Hapus inline width
+        stickySection.style.width = "";
       }
     };
 
     const observer = new IntersectionObserver(observerCallback, {
-      // Aktifkan saat sentinel berada 88px di atas viewport (untuk memberi ruang bagi header utama)
       rootMargin: "-88px 0px 0px 0px",
       threshold: 1.0,
     });

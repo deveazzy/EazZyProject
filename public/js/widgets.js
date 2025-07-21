@@ -1,15 +1,9 @@
-// /**
-//  * css/widgets.js
-//  *
-//  * @author    [EazZy Project]
-//  * @copyright Copyright (c) [2025] [EazZy Project]
-//  * @license   https://opensource.org/licenses/MIT MIT License
-//  * File ini berisi semua tautan ke aset eksternal (CSS, JavaScript)
-//  * dan font yang digunakan di EazZy Project.
-//  */
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 
-// Diasumsikan Lucide diimpor dari path yang benar di proyek Anda.
-// Jika path salah, ikon mungkin tidak muncul, tapi tidak akan menyebabkan bug pada chart.
 import { createIcons, icons } from "/assets/vendor/lucide/lucide.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -80,9 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  /**
-   * Inisialisasi Pemutar Musik
-   */
   const initMusicPlayer = () => {
     const musicPlayer = document.querySelector(".music-player");
     if (!musicPlayer) return;
@@ -98,9 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  /**
-   * Inisialisasi Widget Form
-   */
   const initFormWidgets = () => {
     const formWidgets = document.querySelectorAll(".form-widget");
     formWidgets.forEach((widget) => {
@@ -137,9 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  /**
-   * Inisialisasi Intersection Observer untuk semua animasi scroll
-   */
   const initScrollAnimations = () => {
     const animatedElements = document.querySelectorAll(".animated-on-scroll");
     if (animatedElements.length === 0) return;
@@ -161,7 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
     animatedElements.forEach((el) => observer.observe(el));
   };
 
-  // Panggil semua fungsi inisialisasi untuk mengaktifkan widget
   initPerformanceChart();
   initMusicPlayer();
   initFormWidgets();

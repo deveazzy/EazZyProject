@@ -1,19 +1,14 @@
-// /**
-//  * js/buttons.js
-//  *
-//  * @author    [EazZy Project]
-//  * @copyright Copyright (c) [2025] [EazZy Project]
-//  * @license   https://opensource.org/licenses/MIT MIT License
-//  * File ini berisi semua tautan ke aset eksternal (CSS, JavaScript)
-//  * dan font yang digunakan di EazZy Project.
-//  */
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 import { createIcons, icons } from "/assets/vendor/lucide/lucide.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Pastikan lucide sudah tersedia sebelum mencoba memanggil createIcons
   if (typeof createIcons !== "function") {
     console.error("Lucide icons library not loaded correctly.");
-    return; // Hentikan eksekusi jika Lucide tidak ada
+    return;
   }
 
   const initMobileSliderExpand = () => {
@@ -95,11 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
               ".dropdown-menu a:not(.cursor-not-allowed)"
             );
             if (firstMenu) firstMenu.focus();
-            // Panggilan createIcons di sini sudah OK, tapi pastikan juga dipanggil di luar scope ini
-            // agar semua ikon awal dirender.
-            // if (window.lucide && typeof createIcons === 'function') {
-            //     createIcons({ icons }); // Ini hanya untuk ikon di dalam dropdown setelah dibuka
-            // }
           }
         });
       }
@@ -163,17 +153,13 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  // Initialize all functionalities
   initDropdowns();
   initClickAnimations();
   initMobileSliderExpand();
 
-  // Pastikan createIcons dipanggil setelah semua elemen HTML dimuat dan diinisialisasi
-  // Ini adalah tempat terbaik untuk memastikan semua ikon dirender di halaman.
   if (window.lucide && typeof createIcons === "function") {
     createIcons({ icons });
   } else {
-    // Ini akan membantu debugging jika lucide tidak termuat
     console.warn(
       "Lucide or createIcons function is not available on window object. Icons might not render."
     );

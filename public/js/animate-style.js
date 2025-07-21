@@ -1,12 +1,9 @@
-// /**
-//  * css/animate-style.js
-//  *
-//  * @author    [EazZy Project]
-//  * @copyright Copyright (c) [2025] [EazZy Project]
-//  * @license   https://opensource.org/licenses/MIT MIT License
-//  * File ini berisi semua tautan ke aset eksternal (CSS, JavaScript)
-//  * dan font yang digunakan di EazZy Project.
-//  */
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+*/
+
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElement = document.getElementById('animatedElement');
     const bounceBtn = document.getElementById('bounceBtn');

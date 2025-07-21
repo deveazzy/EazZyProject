@@ -1,12 +1,8 @@
-// /**
-//  * css/header.js
-//  *
-//  * @author    [EazZy Project]
-//  * @copyright Copyright (c) [2025] [EazZy Project]
-//  * @license   https://opensource.org/licenses/MIT MIT License
-//  * File ini berisi semua tautan ke aset eksternal (CSS, JavaScript)
-//  * dan font yang digunakan di EazZy Project.
-//  */
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+ */
 
 import { createIcons, icons } from "/assets/vendor/lucide/lucide.js";
 import { globalNavigationData } from "./navigation-data.js";
@@ -14,9 +10,8 @@ import { globalNavigationData } from "./navigation-data.js";
 let componentsTriggerLink = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Elemen Header ---
   const header = document.querySelector("header");
-  const sentinel = document.getElementById("header-sentinel"); // Ambil elemen penanda
+  const sentinel = document.getElementById("header-sentinel");
   const desktopNavContainer = document.getElementById("desktop-nav-container");
   const megaMenu = document.getElementById("mega-menu");
   const megaMenuCategories = document.getElementById("mega-menu-category-list");
@@ -27,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileNavContainer = document.getElementById("mobile-nav-container");
   const menuBtn = document.getElementById("menu-btn");
 
-  // --- Fungsi Pembantu untuk Membuat Link Navigasi ---
   const createNavLink = (item, isMobile = false, level = 0) => {
     const link = document.createElement("a");
     let href = "";
@@ -73,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return link;
   };
 
-  // --- Rendering Navigasi Desktop ---
   const renderDesktopNav = () => {
     if (!desktopNavContainer) return;
 
@@ -95,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // --- Rendering Mega Menu (Desktop) ---
   const renderMegaMenu = () => {
     if (!megaMenuCategories || !megaMenuContentPanel) return;
 
@@ -208,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // --- Setup Listeners untuk Mega Menu (Desktop) ---
   const setupMegaMenuListeners = () => {
     if (!componentsTriggerLink || !megaMenu) return;
 
@@ -278,7 +269,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // --- Rendering Menu Mobile (Accordion) ---
   const renderMobileNav = (menuItems, parentElement, level = 0) => {
     if (!parentElement) return;
 
@@ -364,7 +354,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // --- Script untuk Menu Mobile (Hamburger Toggle) ---
   if (menuBtn && mobileMenu) {
     menuBtn.addEventListener("click", () => {
       const isHidden = mobileMenu.classList.toggle("hidden");
@@ -394,11 +383,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Logika untuk Sticky Header dengan Intersection Observer ---
   if (header && sentinel) {
     const observerCallback = (entries) => {
       const entry = entries[0];
-      // Jika sentinel TIDAK lagi terlihat di layar (artinya kita sudah scroll melewatinya)
       if (!entry.isIntersecting) {
         header.classList.add("header-sticky");
       } else {
@@ -407,14 +394,13 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const headerObserver = new IntersectionObserver(observerCallback, {
-      root: null, // relatif terhadap viewport
-      threshold: 0, // trigger saat 0% dari elemen terlihat
+      root: null,
+      threshold: 0,
     });
 
     headerObserver.observe(sentinel);
   }
 
-  // --- Inisialisasi Awal ---
   renderDesktopNav();
   renderMegaMenu();
   if (mobileNavContainer) {

@@ -2,7 +2,7 @@
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="/" class="flex items-center space-x-3">
             <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H9a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Z"/><path d="M12 18h.01"/></svg>
-            <h1 class="text-2xl font-bold text-blue-600">EazZy Project</h1>
+            <h1 class="text-2xl font-bold text-blue-600">EazZy Project UI</h1>
         </a>
         
         <button id="menu-btn" class="md:hidden z-20">

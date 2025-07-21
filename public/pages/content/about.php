@@ -5,78 +5,120 @@
  * @path public/pages/about.php
  * @author EazZy Project
  *
- * File ini berisi konten untuk halaman "Tentang" EazZy Project.
- * Ini menjelaskan visi, misi, dan tujuan aplikasi.
- * Konten ini akan di-include oleh page/switch.php.
+ * File ini berisi konten untuk halaman 'Tentang' EazZy Project UI,
+ * menjelaskan filosofi, tujuan, dan manfaatnya.
  */
 ?>
 
 <main class="flex-1 container mx-auto p-4 md:p-8 lg:p-10">
-    <div class="bg-white p-6 md:p-8 lg:p-10 rounded-lg shadow-xl max-w-7xl mx-auto">
-
-        <div class="flex flex-col md:flex-row items-center md:space-x-4 mb-8 md:mb-12 text-center md:text-left">
-            <div class="bg-blue-100 text-blue-600 p-4 rounded-full mb-4 md:mb-0">
-                <i data-lucide="file-text" class="w-10 h-10 md:w-12 md:h-12"></i>
+    <!-- Hero Section: Pengenalan Tentang EazZy Project UI -->
+    <section id="about-hero" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 md:p-12 lg:p-16 rounded-xl shadow-xl max-w-7xl mx-auto mb-6 md:mb-8 text-center">
+        <div class="flex flex-col items-center justify-center mb-8">
+            <div class="bg-white text-blue-600 p-5 rounded-full mb-6 shadow-md animate__animated animate__zoomIn animate__delay-2s">
+                <i data-lucide="info" class="w-16 h-16 md:w-20 md:h-20"></i>
             </div>
-            <div>
-                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 leading-tight animated-on-scroll animate__animated animate__bounceInDown animate__slow">Tentang EazZy Project</h1>
-                <p class="text-lg md:text-xl text-gray-500 mt-1 animated-on-scroll animate__animated animate__fadeInUp animate__slower">
-                    Kami adalah tim yang bersemangat dalam mengembangkan solusi teknologi untuk membantu pertumbuhan bisnis.
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate__animated animate__fadeInDown animate__delay-0-5s">
+                Tentang EazZy Project UI
+            </h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90 animate__animated animate__fadeInUp animate__delay-1s">
+                EazZy Project UI adalah koleksi aset antarmuka pengguna yang dirancang untuk mempercepat dan menyederhanakan proses pengembangan aplikasi web modern. Kami percaya pada kekuatan desain yang intuitif dan kode yang efisien.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate__animated animate__fadeInUp animate__delay-1-5s">
+                <a href="atoms" class="inline-block bg-white text-blue-600 font-bold px-8 py-4 rounded-full text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg transform hover:scale-105">
+                    Lihat Komponen UI
+                </a>
+                <a href="https://github.com/deveazzy/EazZyProject/tree/uiux" target="_blank" class="inline-block border-2 border-white text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 shadow-lg transform hover:scale-105">
+                    Kunjungi GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Filosofi dan Prinsip Desain -->
+    <section id="philosophy" class="py-12 md:py-16">
+        <div class="container mx-auto px-6 md:px-10 py-8 bg-white rounded-xl shadow-xl max-w-7xl mb-6 md:mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                Filosofi di Balik Desain Kami
+            </h2>
+            <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    Kami membangun EazZy Project UI dengan satu filosofi utama: **memudahkan**. Baik Anda seorang developer berpengalaman yang mencari efisiensi, maupun desainer yang ingin mewujudkan ide visual tanpa hambatan teknis, UI kami dirancang untuk menjadi solusi.
+                </p>
+                <p>
+                    Prinsip-prinsip inti yang kami terapkan meliputi:
+                </p>
+                <ul class="list-disc list-inside text-left space-y-2 pl-4">
+                    <li>
+                        <strong class="text-blue-600">Intuitif:</strong> Setiap komponen dirancang agar mudah dipahami dan digunakan, baik oleh pengguna akhir maupun developer.
+                    </li>
+                    <li>
+                        <strong class="text-green-600">Modular:</strong> Aset-aset UI bersifat independen dan dapat digabungkan seperti blok bangunan, memberikan fleksibilitas tanpa batas.
+                    </li>
+                    <li>
+                        <strong class="text-purple-600">Responsif:</strong> Pengalaman pengguna yang konsisten dan optimal di berbagai perangkat, dari desktop hingga seluler.
+                    </li>
+                    <li>
+                        <strong class="text-yellow-600">Berkinerja:</strong> Dioptimalkan untuk kecepatan dan efisiensi, memastikan aplikasi Anda berjalan lancar.
+                    </li>
+                    <li>
+                        <strong class="text-red-600">Open-Source:</strong> Kami percaya pada kekuatan kolaborasi dan transparansi, memungkinkan siapa saja untuk menggunakan, memodifikasi, dan berkontribusi.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Manfaat Utama bagi Pengguna -->
+    <section id="benefits-detail" class="py-12 md:py-16">
+        <div class="container mx-auto px-6 md:px-10 py-8 bg-white rounded-xl shadow-xl max-w-7xl mb-6 md:mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                Bagaimana EazZy Project UI Membantu Anda
+            </h2>
+            <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    Dengan memanfaatkan EazZy Project UI, Anda dapat:
+                </p>
+                <ul class="list-disc list-inside text-left space-y-2 pl-4">
+                    <li>
+                        <strong class="bg-blue-100 text-blue-800 px-1 py-0.5 rounded">Menghemat Waktu Pengembangan:</strong> Komponen siap pakai mengurangi kebutuhan untuk menulis kode UI dari nol.
+                    </li>
+                    <li>
+                        <strong class="bg-green-100 text-green-800 px-1 py-0.5 rounded">Mencapai Konsistensi Desain:</strong> Memastikan tampilan dan nuansa yang seragam di seluruh aplikasi Anda.
+                    </li>
+                    <li>
+                        <strong class="bg-purple-100 text-purple-800 px-1 py-0.5 rounded">Meningkatkan Pengalaman Pengguna:</strong> Fokus pada fungsionalitas inti aplikasi Anda, sementara UI kami menangani interaksi yang mulus.
+                    </li>
+                    <li>
+                        <strong class="bg-yellow-100 text-yellow-800 px-1 py-0.5 rounded">Mempercepat Prototyping:</strong> Bangun prototipe fungsional dengan cepat untuk validasi ide.
+                    </li>
+                    <li>
+                        <strong class="bg-red-100 text-red-800 px-1 py-0.5 rounded">Membangun Aplikasi Responsif:</strong> Desain yang adaptif secara otomatis menyesuaikan dengan berbagai ukuran layar.
+                    </li>
+                </ul>
+                <p>
+                    Kami berkomitmen untuk terus mengembangkan dan memperkaya koleksi UI ini, menjadikannya sumber daya yang tak ternilai bagi komunitas developer dan desainer.
                 </p>
             </div>
         </div>
+    </section>
 
-        <section class="mb-10 md:mb-12">
-            <p class="text-gray-600 leading-relaxed text-base md:text-lg max-w-3xl mx-auto text-center animated-on-scroll animate__animated animate__fadeInUp animate__slower animate__delay-1s">
-                Proyek ini dibangun dengan semangat <strong class="font-semibold text-gray-700">open-source</strong>. Kami percaya pada kekuatan kolaborasi dan transparansi. Anda dapat melihat, menggunakan, dan berkontribusi pada kode kami melalui
-                <a href="https://github.com/deveazzy/EazZyProject" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-semibold text-blue-600 hover:text-blue-800 hover:underline transition-colors">
-                    <span>repositori GitHub kami</span>
-                    <i data-lucide="github" class="w-4 h-4"></i>
-                </a>.
+    <!-- Section: Ajakan Bertindak -->
+    <section id="about-cta" class="py-12 md:py-16">
+        <div class="container mx-auto px-6 md:px-10 text-center bg-white text-gray-900 rounded-xl shadow-xl max-w-7xl p-8 mb-6 md:mb-8">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">
+                Mulai Jelajahi atau Berkontribusi!
+            </h3>
+            <p class="text-lg opacity-90 mb-8 max-w-xl mx-auto">
+                Tertarik untuk melihat lebih banyak komponen UI kami atau ingin bergabung dalam pengembangan?
             </p>
-        </section>
-
-        <section class="mb-10 md:mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-700 pb-3 mb-6">Visi Kami</h2> <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-left">
-                <div class="space-y-6 animated-on-scroll animate__animated animate__fadeInLeft animate__slow">
-                    <p class="text-gray-700 leading-relaxed text-base md:text-lg">
-                        Menjadi platform aplikasi bisnis terkemuka yang memberdayakan UMKM dan usaha kecil untuk berinovasi, bersaing, dan berkembang di era digital, tanpa hambatan biaya. Kami percaya bahwa setiap bisnis, besar maupun kecil, berhak mendapatkan akses ke alat-alat canggih untuk mencapai potensi penuhnya.
-                    </p>
-                    <p class="text-gray-700 leading-relaxed text-base md:text-lg">
-                        Dengan EazZy Project, kami membayangkan ekosistem di mana manajemen bisnis menjadi lebih mudah, lebih cerdas, dan lebih terjangkau bagi semua orang.
-                    </p>
-                </div>
-                <div class="animated-on-scroll animate__animated animate__fadeInRight animate__slow">
-                    <img src="https://placehold.co/600x400/93C5FD/1E40AF?text=Visi+Kami" alt="Gambar Visi Kami" class="rounded-lg shadow-lg w-full h-auto object-cover">
-                </div>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 max-w-md mx-auto">
+                <a href="atoms" class="w-full md:w-auto bg-blue-600 text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg transform hover:scale-105">
+                    Lihat Komponen UI
+                </a>
+                <a href="https://github.com/deveazzy/EazZyProject/tree/uiux" target="_blank" class="w-full md:w-auto border-2 border-blue-600 text-blue-600 font-bold px-8 py-4 rounded-full text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg transform hover:scale-105">
+                    Kunjungi GitHub
+                </a>
             </div>
-        </section>
-
-        <section class="mb-10 md:mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-700 pb-3 mb-6">Misi Kami</h2> <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-left">
-                <div class="animated-on-scroll animate__animated animate__fadeInLeft animate__slower animate__delay-1s">
-                    <img src="https://placehold.co/600x400/A7F3D0/065F46?text=Misi+Kami" alt="Gambar Misi Kami" class="rounded-lg shadow-lg w-full h-auto object-cover">
-                </div>
-                <div class="space-y-6 animated-on-scroll animate__animated animate__fadeInRight animate__slower animate__delay-1s">
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 text-base md:text-lg">
-                        <li>Menyediakan aplikasi bisnis gratis yang intuitif dan kaya fitur.</li>
-                        <li>Meningkatkan efisiensi operasional dan pengambilan keputusan bagi pelaku usaha.</li>
-                        <li>Membangun komunitas yang mendukung dan berkolaborasi.</li>
-                        <li>Terus berinovasi untuk memenuhi kebutuhan pasar yang berkembang.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-10 md:mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-700 pb-3 mb-6 text-center animated-on-scroll animate__animated animate__fadeInUp animate__slower animate__delay-2s">Pengembang</h2> <div class="flex flex-wrap justify-center gap-8">
-                <div class="flex flex-col items-center text-center animated-on-scroll animate__animated animate__zoomIn animate__slower animate__delay-2s">
-                    <img src="https://placehold.co/120x120/E0F2F7/000000?text=EazZy" alt="Logo EazZy Project" class="w-32 h-32 rounded-full object-cover mb-3 shadow-md">
-                    <h3 class="text-lg font-semibold text-gray-800">EazZy Project</h3>
-                    <p class="text-sm text-gray-500">EazZy Apps - Smart Apps Free For Everyone</p>
-                </div>
-            </div>
-        </section>
-
-    </div>
+        </div>
+    </section>
 </main>

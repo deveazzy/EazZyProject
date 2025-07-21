@@ -7,15 +7,6 @@
  */
 // Daftar halaman yang valid untuk mencegah include file sembarangan
 // var_dump($page);
-$allowed_pages = [
-    '401', '403', '500', '503', '404', 
-    'home', 'about', 'atoms', 'icons', 
-    'typography', 'tabs', 'widgets', 'buttons', 
-    'alerts-and-notifications', 'tailwind-css', 
-    'flatpickr', 'apexcharts', 'animate-style', 
-    'tabulator', 'splide', 'redis-test', 'modal-form', 
-    'blank-content', 'nprogress', 'grid'
-];
 
 if (in_array($page, $allowed_pages)) {
     // Tambahkan '../' untuk naik satu level dari folder 'page' ke root direktori

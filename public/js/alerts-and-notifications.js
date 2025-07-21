@@ -1,30 +1,21 @@
-// /**
-//  * css/alerts-and-notification.js
-//  *
-//  * @author    [EazZy Project]
-//  * @copyright Copyright (c) [2025] [EazZy Project]
-//  * @license   https://opensource.org/licenses/MIT MIT License
-//  * File ini berisi semua tautan ke aset eksternal (CSS, JavaScript)
-//  * dan font yang digunakan di EazZy Project.
-//  */
-// Import PNotify dari path lokal yang benar.
+/*
+ * @author    [EazZy Project]
+ * @copyright Copyright (c) [2025] [EazZy Project]
+ * @license   https://opensource.org/licenses/MIT MIT License
+*/
+
 import PNotify from "/assets/vendor/pnotify/PNotify.js";
-// import PNotifyButtons from "/assets/vendor/pnotify/PNotifyButtons.js";
 
-// Mengatur default untuk semua notifikasi PNotify
-PNotify.defaults.delay = 3000; // Notifikasi akan hilang setelah 3 detik
-PNotify.defaults.closerHover = false; // Tombol close selalu terlihat
-
-// Membuat objek konfigurasi untuk stack.
+PNotify.defaults.delay = 2000;
+PNotify.defaults.closerHover = false;
 PNotify.defaults.stack = {
-  dir1: "up", // Notifikasi akan muncul dari bawah ke atas
+  dir1: "up",
   dir2: "left",
   firstpos1: 25,
   firstpos2: 25,
   push: "top",
 };
 
-// Menambahkan event listener ke setiap tombol.
 document.getElementById("notify-success").addEventListener("click", () => {
   PNotify.success({
     title: "Success!",
